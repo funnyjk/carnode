@@ -1,0 +1,11 @@
+{
+  "name": "drivenode",
+  "main": "app.js",
+  "description": "Driving a car with node",
+  "version": "1.0",
+  "dependencies": {
+    "express": "3.5.1",
+    "node-serial": "0.1.1",
+    "socket.io": "0.9.16"
+  }
+}
