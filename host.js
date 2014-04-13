@@ -59,7 +59,14 @@ function stop() {
   serial.write('s');
 }
 
-io.sockets.on('connection', function(socket) {
+var socketIO = require('socket.io-client');
+var socket = socketIO.connect('http://nodeplayscar.herokuapp.com/');
+  socket.on('connect', function(){
+    socket.on('event', function(data){});
+    socket.on('disconnect', function(){});
+  });
+
+io.sockets.on('connect', function(socket) {
   
   socket.on('switch', function(state) {
     if (state == "forward"){
