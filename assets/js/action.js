@@ -1,5 +1,5 @@
-//var urlLink = '192.168.1.4:5000';
-//var socket = io.connect(urlLink);
+var urlLink = '192.168.1.4:5000';
+var socket = io.connect(urlLink);
 
 function forward() {
   socket.emit('switch', "forward");
