@@ -9,6 +9,6 @@
     "socket.io": "0.9.16"
   },
   "scripts": {
-    "start": "app.js"
+    "start": "node app.js"
   }
 }
