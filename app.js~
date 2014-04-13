@@ -1,7 +1,8 @@
 var 
   express = require('express'),
   app = express(),
-  server = require('http').createServer(app);
+  server = require('http').createServer(app),
+  io = require('socket.io').listen(5000);
 
 app.configure(function(){
   app.use(express.static(__dirname + '/public'));
@@ -15,4 +16,12 @@ app.get('/', function(req, res){
 var port = Number(process.env.PORT || 5000);
 app.listen(port, function() {
   console.log("Listening on " + port);
+});
+
+io.socket.on('connection', function(){  
+  socket.on('switch', function(state) {
+  });
+  socket.on('test', function(data) {
+    console.log(data)l;
+  });
 });

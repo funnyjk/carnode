@@ -1,4 +1,5 @@
-var urlLink = '192.168.1.4:5000';
+var urlLink = 'http://nodeplayscar.herokuapp.com';
+
 var socket = io.connect(urlLink);
 
 function forward() {
