@@ -61,7 +61,8 @@ function stop() {
 
 var socketIO = require('socket.io-client');
 var socket = socketIO.connect('http://nodeplayscar.herokuapp.com/');
-  socket.on('connect', function(){  
+  socket.on('connect', function(){ 
+    socket.emit('car');
   socket.on('switch', function(state) {
     if (state == "forward"){
       forward();

@@ -2,7 +2,8 @@ var
   express = require('express'),
   app = express(),
   server = require('http').createServer(app),
-  io = require('socket.io').listen(5000);
+  io = require('socket.io').listen(5000),
+  car;
 
 app.configure(function(){
   app.use(express.static(__dirname + '/public'));
@@ -17,9 +18,14 @@ var port = Number(process.env.PORT || 5000);
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
-
-io.socket.on('connection', function(){  
+3
+io.sockets.on('connection', function(socket){ 
+  socket.on('car', function() {
+    car = socket;
+    console.log("the car has connected");
+  });
   socket.on('switch', function(state) {
+   
   });
   socket.on('test', function(data) {
     console.log(data)l;
