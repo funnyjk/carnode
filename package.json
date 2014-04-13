@@ -2,7 +2,7 @@
   "name": "drivenode",
   "main": "app.js",
   "description": "Driving a car with node",
-  "version": "1.0",
+  "version": "1.0.0",
   "dependencies": {
     "express": "3.5.1",
     "serialport": "1.4.0",
