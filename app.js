@@ -2,7 +2,7 @@ var
   express = require('express'),
   app = express(),
   server = require('http').createServer(app),
-  io = require('socket.io').listen(5000),
+  io = require('socket.io'),
   car;
 
 app.configure(function(){
@@ -18,7 +18,8 @@ var port = Number(process.env.PORT || 5000);
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
-3
+io = io.listen(app);
+
 io.sockets.on('connection', function(socket){ 
   socket.on('car', function() {
     car = socket;
