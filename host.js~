@@ -60,7 +60,7 @@ function stop() {
 }
 
 var socketIO = require('socket.io-client');
-var socket = socketI('http://nodeplayscar.herokuapp.com/');
+var socket = socketIO('http://nodeplayscar.herokuapp.com/');
   socket.on('connect', function(){
    
   socket.on('switch', function(state) {
